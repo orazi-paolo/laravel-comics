@@ -27,8 +27,31 @@ Route::get('/', function () {
         'news' => 'NEWS',
         'shop' => 'SHOP',
     ];
+    // creo un array associativo con i link di navigazione rapida
+    $quickNavigation = [
+    'digital-comics' => [
+        'name' => 'DIGITAL COMICS',
+        'image' =>  asset('images/buy-comics-digital-comics.png')
+    ],
+    'dc-merchandise' => [
+        'name' => 'DC MERCHANDISE',
+        'image' => asset('images/buy-comics-merchandise.png')
+    ],
+    'subscription' => [
+        'name' => 'SUBSCRIPTION',
+        'image' => asset('images/buy-comics-subscriptions.png')
+    ],
+    'comic-shop-locator' => [
+        'name' => 'COMIC SHOP LOCATOR',
+        'image' => asset('images/buy-comics-shop-locator.png')
+    ],
+    'dc-power-visa' => [
+        'name' => 'DC POWER VISA',
+        'image' => asset('images/buy-dc-power-visa.svg')
+    ]
+];
     // importo i dati dei comics come se fosse un simil database dai config
     $comics = config('comics');
 
-    return view('pages.comics', compact('pages', 'comics'));
+    return view('pages.comics', compact('pages', 'comics', 'quickNavigation'));
 });
