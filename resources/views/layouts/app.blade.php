@@ -8,6 +8,9 @@
     @yield('additional-meta')
     <title>@yield("page-title", "")</title>
 
+    {{-- aggiungo i file scss --}}
+    @vite(['resources/scss/app.scss', 'resources/scss/header.scss', 'resources/js/app.js'])
+
     @yield('additional-cdn')
 </head>
 
