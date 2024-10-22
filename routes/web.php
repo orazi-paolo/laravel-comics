@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // creo un array associativo con le pagine del sito
     $pages = [
         'characters' => 'CHARACTERS',
         'comics' => 'COMICS',
@@ -26,5 +27,8 @@ Route::get('/', function () {
         'news' => 'NEWS',
         'shop' => 'SHOP',
     ];
-    return view('pages.comics', compact('pages'));
+    // importo i dati dei comics come se fosse un simil database dai config
+    $comics = config('comics');
+
+    return view('pages.comics', compact('pages', 'comics'));
 });

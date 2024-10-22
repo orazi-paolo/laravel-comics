@@ -3,3 +3,10 @@
 .bg-light-blue {
     background-color: #0582f9;
 }
+
+.top-plus-50 {
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
