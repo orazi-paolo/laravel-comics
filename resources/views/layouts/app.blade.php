@@ -9,7 +9,7 @@
     <title>@yield("page-title", "")</title>
 
     {{-- aggiungo i file scss --}}
-    @vite(['resources/scss/app.scss', 'resources/scss/header.scss', 'resources/js/app.js'])
+    @vite(['resources/scss/app.scss', 'resources/scss/header.scss', 'resources/scss/jumbotron.scss', 'resources/js/app.js'])
 
     @yield('additional-cdn')
 </head>
@@ -18,6 +18,9 @@
 
     {{-- includi header --}}
     @include('partials.header')
+
+    {{-- includo jumbotron --}}
+    @include('partials.jumbotron')
 
     {{-- inserisci contenuti da chi estende --}}
     <main>

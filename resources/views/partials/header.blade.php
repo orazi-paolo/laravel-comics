@@ -1,4 +1,4 @@
-<header id="header">
+<header id="header" class="mb-3">
     <div class="bg-light-blue">
         <div class="container d-flex justify-content-end">
             <div class="text-white me-5 fs-6 fw-bold">
