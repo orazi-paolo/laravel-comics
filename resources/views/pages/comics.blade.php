@@ -15,12 +15,14 @@
             </button>
         </div>
         <div class="row">
-            @foreach ($comics as $singleComic )
+            @foreach ($comics as $id => $singleComic )
             <div class="col-2 mb-3">
+                <a href="{{ route('comic', $id)}}">
                     <img src="{{ $singleComic['thumb']}}" alt="{{ $singleComic['title']}}" class="img-fluid img-thumb mb-3 cursor_pointer">
                     <h6 class="text-white cursor_pointer">
                         {{ strtoupper($singleComic['series'])}}
                     </h6>
+                </a>
             </div>
             @endforeach
             <div class="col-12 d-flex justify-content-center mb-3">

@@ -109,4 +109,79 @@ $imgSocial = [
     $comics = config('comics');
 
     return view('pages.comics', compact('pages', 'comics', 'quickNavigation','navigationSections', 'imgSocial'),);
-});
+})->name('comics');
+
+// creo una nuova route per la pagina dedicata al singolo comic
+Route::get('/comic/{id}', function ($id) {
+    // creo un array associativo con le pagine del sito
+    $pages = [
+        'characters' => 'CHARACTERS',
+        'comics' => 'COMICS',
+        'movies' => 'MOVIES',
+        'tv' => 'TV',
+        'games' => 'GAMES',
+        'collectibles' => 'COLLECTIBLES',
+        'videos' => 'VIDEOS',
+        'fans' => 'FANS',
+        'news' => 'NEWS',
+        'shop' => 'SHOP',
+    ];
+    $navigationSections = [
+    'DC COMICS' => [
+        'title' => 'DC COMICS',
+        'links' => [
+            'Characters',
+            'Comics',
+            'Movies',
+            'Tv',
+            'Games',
+            'Videos',
+            'News'
+        ]
+    ],
+    'DC' => [
+        'title' => 'DC',
+        'links' => [
+            'Terms Of Use',
+            'Privacy policy (New)',
+            'Ad Choices',
+            'Advertising',
+            'Jobs',
+            'Subscriptions',
+            'Talent Workshops',
+            'CPSC Certificates',
+            'Ratings',
+            'Shop Help',
+            'Contact Us'
+        ]
+    ],
+    'SITES' => [
+        'title' => 'SITES',
+        'links' => [
+            'DC',
+            'MAD Magazine',
+            'DC Kids',
+            'DC Universe',
+            'DC Power Visa'
+        ]
+    ],
+    'SHOP' => [
+        'title' => 'SHOP',
+        'links' => [
+            'Shop DC',
+            'Shop DC Collectibles'
+        ]
+    ]
+];
+$imgSocial = [
+    'facebook' => asset('images/footer-facebook.png'),
+    'twitter' => asset('images/footer-twitter.png'),
+    'youtube' => asset('images/footer-youtube.png'),
+    'pinterest' => asset('images/footer-pinterest.png'),
+    'periscope' => asset('images/footer-periscope.png'),
+];
+
+    $comics = config('comics');
+    $comic = $comics[$id];
+    return view('pages.singleComic', compact('comic', 'comics', 'pages', 'navigationSections', 'imgSocial'));
+})->name('comic');
