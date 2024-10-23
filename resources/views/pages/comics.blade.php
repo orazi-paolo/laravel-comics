@@ -6,6 +6,12 @@
 
 @section("page-title", "Homepage")
 
+{{-- includi header --}}
+@include('partials.header')
+
+{{-- includo jumbotron --}}
+@include('partials.jumbotron')
+
 @section("main-content")
 <main id="main" class="bg-black">
     <section class="container">

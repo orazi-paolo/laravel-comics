@@ -16,14 +16,8 @@
 
 <body>
 
-    {{-- includi header --}}
-    @include('partials.header')
-
-    {{-- includo jumbotron --}}
-    @include('partials.jumbotron')
-
     {{-- inserisci contenuti da chi estende --}}
-        @yield("main-content")
+    @yield("main-content")
 
     {{-- includi footer --}}
     @include('partials.footer')

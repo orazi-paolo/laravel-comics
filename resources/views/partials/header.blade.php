@@ -14,7 +14,19 @@
         <div>
             <ul class="list-unstyled d-flex m-0">
                 @foreach ( $pages as $singlePage )
-                <li class="me-3 cursor-pointer"> <a href="#" class="text-decoration-none">{{ $singlePage }}</a></li>
+                @if ($singlePage == 'COMICS')
+                <li class="me-3 cursor-pointer">
+                     <a href="{{ route('comics') }}" class="text-decoration-none">
+                        {{ $singlePage }}
+                    </a>
+                </li>
+                @else
+                <li class="me-3 cursor-pointer">
+                    <a href="#" class="text-decoration-none">
+                        {{ $singlePage }}
+                    </a>
+                </li>
+                @endif
                 @endforeach
             </ul>
         </div>

@@ -127,52 +127,52 @@ Route::get('/comic/{id}', function ($id) {
         'shop' => 'SHOP',
     ];
     $navigationSections = [
-    'DC COMICS' => [
-        'title' => 'DC COMICS',
-        'links' => [
-            'Characters',
-            'Comics',
-            'Movies',
-            'Tv',
-            'Games',
-            'Videos',
-            'News'
+        'DC COMICS' => [
+            'title' => 'DC COMICS',
+            'links' => [
+                'Characters',
+                'Comics',
+                'Movies',
+                'Tv',
+                'Games',
+                'Videos',
+                'News'
+            ]
+        ],
+        'DC' => [
+            'title' => 'DC',
+            'links' => [
+                'Terms Of Use',
+                'Privacy policy (New)',
+                'Ad Choices',
+                'Advertising',
+                'Jobs',
+                'Subscriptions',
+                'Talent Workshops',
+                'CPSC Certificates',
+                'Ratings',
+                'Shop Help',
+                'Contact Us'
+            ]
+        ],
+        'SITES' => [
+            'title' => 'SITES',
+            'links' => [
+                'DC',
+                'MAD Magazine',
+                'DC Kids',
+                'DC Universe',
+                'DC Power Visa'
+            ]
+        ],
+        'SHOP' => [
+            'title' => 'SHOP',
+            'links' => [
+                'Shop DC',
+                'Shop DC Collectibles'
+            ]
         ]
-    ],
-    'DC' => [
-        'title' => 'DC',
-        'links' => [
-            'Terms Of Use',
-            'Privacy policy (New)',
-            'Ad Choices',
-            'Advertising',
-            'Jobs',
-            'Subscriptions',
-            'Talent Workshops',
-            'CPSC Certificates',
-            'Ratings',
-            'Shop Help',
-            'Contact Us'
-        ]
-    ],
-    'SITES' => [
-        'title' => 'SITES',
-        'links' => [
-            'DC',
-            'MAD Magazine',
-            'DC Kids',
-            'DC Universe',
-            'DC Power Visa'
-        ]
-    ],
-    'SHOP' => [
-        'title' => 'SHOP',
-        'links' => [
-            'Shop DC',
-            'Shop DC Collectibles'
-        ]
-    ]
-];
+    ];
 $imgSocial = [
     'facebook' => asset('images/footer-facebook.png'),
     'twitter' => asset('images/footer-twitter.png'),
@@ -183,5 +183,5 @@ $imgSocial = [
 
     $comics = config('comics');
     $comic = $comics[$id];
-    return view('pages.singleComic', compact('comic', 'comics', 'pages', 'navigationSections', 'imgSocial'));
+    return view('pages.singleComic', compact('pages', 'comic', 'comics','navigationSections', 'imgSocial'));
 })->name('comic');
